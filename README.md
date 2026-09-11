@@ -38,13 +38,14 @@ could not be recovered from the PDF and was restored by judgment.
 
 ## The record repositories
 
-Every number in Sections 7 and 10 is read from a sealed record in a public repository. The
-paper is a methodological synthesis and owns no measurements of its own.
+Every number in Sections 7 and 10 is read from a sealed record. The paper is a
+methodological synthesis and owns no measurements of its own. Note that the Section 10
+records are in a repository that is currently private, which the paper states.
 
 | Section | Records |
 |---|---|
 | 7, Geometric Evaluation Theory | [`ahb-sjsu/geometric-evaluation-theory`](https://github.com/ahb-sjsu/geometric-evaluation-theory), gates G2, G3, G4, G4b, G5 |
-| 10, nine registrations and one law | [`ahb-sjsu/observation-theory-campaigns`](https://github.com/ahb-sjsu/observation-theory-campaigns), OD track gates D2 through D2v9 |
+| 10, nine registrations and one law | `ahb-sjsu/observation-theory-campaigns` (**private**), OD track gates D2 through D2v9 |
 | 8, economic stake invariance | IEEE TCSS, accepted 2026-09-06, with `eris-econ` as the reference code |
 | Throughout | [`ahb-sjsu/philosophy-engineering`](https://github.com/ahb-sjsu/philosophy-engineering), the discipline's specifications |
 

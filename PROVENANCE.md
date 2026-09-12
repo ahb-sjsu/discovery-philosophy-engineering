@@ -94,12 +94,71 @@ standard forbids mathematics in the abstract and introduction. Equation numberin
 differs from the 2026-09-08 PDF. The original had eleven numbered equations and this source
 has seven, the four dropped ones being the arrow chains, which carried no mathematics.
 
-**Not done.** The section headings still use the author's "Worked Example I:" and
-"Workstream A:" scheme, which the standard's clause on colons in headings would change.
-That is a structural naming decision for the author, not an editing one, and it was left
-alone.
+**Left alone on 2026-09-11, done on 2026-09-12.** The section headings kept the
+author's "Worked Example I:" and "Workstream A:" scheme, which the standard's clause on
+colons in headings forbids. It was treated as a structural naming decision for the author
+rather than an editing one. Section 4.2 below records the change, once the author asked for
+the house rules to be applied in full.
 
-## 4. Build
+## 4. Restructured for Synthese, 2026-09-12
+
+### 4.1 A prior-art check narrowed the central claim
+
+The house rule is that novelty is checked before it is claimed. The draft said
+no existing approach compiles a philosophical proposition into invariance and
+boundary claims and uses the result to revise the philosophy. Searching the
+literature the draft did not cite found four developed statements of its core
+idea, and the claim as written did not survive them.
+
+| Work | What it already holds |
+|---|---|
+| Klein (1893), Weyl (1952) | geometry as the study of what a transformation group leaves fixed |
+| Nozick (2001) | objectivity itself as invariance under admissible transformation |
+| Levins (1966), Wimsatt (1981) | robustness as what is invariant across independent means of determination, which is the invariance envelope under another name and thirty years earlier |
+| Woodward (2003) | invariance under intervention as the mark of a causal relation, treated explicitly as a matter of degree and range |
+| Worrall (1989) | structure as what survives the replacement of one theory by another |
+| Ismael and van Fraassen (2003) | symmetry as a guide to superfluous theoretical structure, which is Proposition 1 in philosophical form |
+
+A new Section 2 states all six and concedes that five of the paper's central
+ideas have owners. The claim of novelty is now narrow, that what is added is the
+accounting rather than the criterion, and it is defensible where the old one was
+not. This is a change of claim and not of wording, which the standing writing
+standard licenses and in this case required.
+
+### 4.2 Structure
+
+Headings lost their colons and their category names, per the writing standard.
+The five worked examples became subsections of one section, with the three that
+make a single point each compressed and the discovery line kept in full. A new
+Section 7.6 reports the case in which the discipline's own check found a defect
+in the authors' records, which is the only evidence in the paper that does not
+rest on the authors' good faith and is the answer to the objection that every
+example is their own work. That objection is now stated in Section 11 in its
+strongest form rather than left for a reviewer to make.
+
+### 4.3 Double-anonymous review
+
+Synthese reviews double-anonymous and places the burden on the author. The paper
+is hard to anonymize, because its evidence is the author's own programme and
+every worked example cites it. Third-person self-citation is permitted, so the
+body needed no change. The bibliography did, since three entries carried
+repository URLs containing the author's account name and one carried the
+institution. `paper/build-anon.py` rewrites those five entries, and
+`paper/check-anon.py` greps the built PDF rather than the source, which is what
+would catch a stale `.bbl` from the named build. The check found the URL leak,
+and on its second run found the phrase "the author's hands", generic in intent
+but readable as self-reference, now "the claimant's hands".
+
+### 4.4 What was checked
+
+Zero em-dashes. Zero colons or semicolons in prose, captions, or headings. Zero
+colored text. Zero mathematics in the abstract. Zero banned words, after
+removing three uses of "regime", one of "gap", and one of "honest". Both builds
+clean with no undefined references or citations. The anonymity check passes on
+seven patterns. 20 pages named, 19 anonymized, about 9,600 words, inside the 15
+to 30 printed pages Synthese expects.
+
+## 5. Build
 
 ```
 cd paper

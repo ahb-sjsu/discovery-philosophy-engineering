@@ -11,10 +11,37 @@ commitment. The loop is six verbs. Formalize, derive, search, probe, witness, re
 ## Layout
 
 ```
-paper/dpe.tex     the manuscript
-paper/refs.bib    19 references, the draft's 13 plus 6 added 2026-09-11
-PROVENANCE.md     what is the author's original text, what was restored, what is new
+paper/dpe.tex         the manuscript
+paper/refs.bib        24 references
+paper/title-page.tex  the separate title page Synthese requires
+paper/build-anon.py   generates the double-anonymous review copy
+paper/check-anon.py   greps the built review PDF for identifying information
+PROVENANCE.md         what is the author's original text, what was restored, what is new
 ```
+
+## Target venue
+
+*Synthese*. It publishes long methodological work, tolerates formalism, and the
+paper argues inside its literature. Review is double-anonymous, papers run 15 to
+30 printed pages, and a separate title page carries the author information.
+
+Build the review copy and check it before submitting. `check-anon.py` reads the
+PDF that would actually be uploaded rather than the source meant to produce it,
+which is what catches a stale `.bbl` left over from the named build.
+
+```
+python build-anon.py
+pdflatex dpe-anon && bibtex dpe-anon && pdflatex dpe-anon && pdflatex dpe-anon
+python check-anon.py
+```
+
+Third-person citation of the author's prior work is permitted under the policy
+and the paper relies on it. What is not permitted, and what a naive anonymous
+build still leaks, is in the bibliography, where the repository URLs carry the
+author's account name and the foundation document carries the institution.
+`build-anon.py` rewrites those five entries. The check found the leak, and then
+found a second one in the phrase "the author's hands", which was generic but
+readable as self-reference and is now "the claimant's hands".
 
 ## Build
 

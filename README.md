@@ -89,11 +89,11 @@ Drafted and building. Not submitted anywhere, and no venue chosen.
 
 Open items for the author:
 
-1. Confirm the reconstructed codomain of the judgment map, `\mathcal{P}(Y)`, against what
-   the lost original wrote. See `PROVENANCE.md` section 2.
-2. Decide whether the heading scheme should lose its colons, which the standing prose
-   standard would require and which was left alone as a structural choice.
-3. Choose a venue. The paper is 19 pages, which fits a philosophy of science or methodology
-   journal and no conference page limit currently in view.
-4. Fill the TCSS volume, issue, and pages in `refs.bib` once they are assigned. The entry
-   carries a `% verify vol/pages on final` mark, which must not be removed silently.
+1. Fill the TCSS volume, issue, and pages in `refs.bib` once they are assigned. The entry
+   carries a `% verify vol/issue/pages on final` mark, which must not be removed silently.
+   It is the only live verify mark left.
+2. Decide the two bare `none` revisions in the campaign registry, which the discovery-arm
+   checker reports as warnings because they give no reason.
+
+Closed. The codomain of the judgment map was `\Delta(Y)`, confirmed by the author on
+2026-09-12. The heading scheme lost its colons. The venue is *Synthese*.

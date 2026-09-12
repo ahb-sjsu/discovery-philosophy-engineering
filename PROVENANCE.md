@@ -15,11 +15,13 @@ thirteen original references. The claims are the author's and were not changed.
 
 ## 2. Restored by judgment, and open for the author to correct
 
-- **The codomain of the judgment map.** The PDF renders the display as `J : X → (Y)` with
-  the symbol before `(Y)` lost to text extraction. It is reconstructed as
-  `\mathcal{P}(Y)`, described in the text as the space of distributions over `Y`, which is
-  what the draft's own next sentence requires when it says deterministic judgments are
-  included as degenerate distributions. If the original was `Δ(Y)`, change one macro.
+- **The codomain of the judgment map. RESOLVED 2026-09-12.** The PDF renders the display
+  as `J : X → (Y)` with the symbol before `(Y)` lost to text extraction. The
+  reconstruction guessed `\mathcal{P}(Y)` from the draft's own next sentence, which says
+  deterministic judgments are included as degenerate distributions. The author confirmed
+  the original was `\Delta(Y)`, and all three occurrences were changed. The surrounding
+  prose needed no change, since Delta is the usual simplex notation for the distributions
+  over `Y`. This was the only symbol the reconstruction could not recover.
 - **Document class and geometry.** `article`, 11pt, letter, 1in margins, Latin Modern,
   `natbib` with `plainnat`. This reproduces the PDF's typography and is not claimed to be
   the original preamble.

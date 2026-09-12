@@ -287,9 +287,9 @@ Let $S$ denote a space of world states or cases, $X$ a representation space, and
 $\sigma : S \to X$ an encoding map. Let $Y$ be an output space, and let a judgment
 or theory-induced prediction be
 \begin{equation}
-J : X \to \mathcal{P}(Y),
+J : X \to \Delta(Y),
 \end{equation}
-where $\mathcal{P}(Y)$ is the space of distributions over $Y$ and a deterministic
+where $\Delta(Y)$ is the space of distributions over $Y$ and a deterministic
 judgment is a degenerate distribution. Let $\mathcal{T}$ be a set of transformations
 $\tau : X \to X$ declared to preserve some target-relevant structure.
 
@@ -326,7 +326,7 @@ every description the theory says is the same case.
 \begin{proposition}[Factorization criterion]
 If $J$ is constant on every $\sim_{\mathcal{T}}$ equivalence class, then there
 exists a well-defined map
-$\bar{J} : X/\sim_{\mathcal{T}} \to \mathcal{P}(Y)$ such that
+$\bar{J} : X/\sim_{\mathcal{T}} \to \Delta(Y)$ such that
 $J = \bar{J} \circ q$, where $q : X \to X/\sim_{\mathcal{T}}$ is the quotient map.
 \end{proposition}
 

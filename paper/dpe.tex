@@ -65,7 +65,11 @@ analysis but an instrument for experimenting on it. We define an invariance
 envelope as the family of transformations under which a claim survives, a boundary
 witness as the smallest admissible transformation that breaks it, and a
 comparative notion of fundamentality that ranks two descriptions of comparable
-adequacy by their envelopes. We then report the discipline running. A campaign
+adequacy by their envelopes. Against the standing objection that the theorist
+picks the admissible class, we argue that declaring it is not sufficient, since a
+recorded arbitrary choice is still arbitrary, and give five constraints that make
+the class costly to gerrymander, the last of which requires that any narrowing of
+a claim be shown to bind. We then report the discipline running. A campaign
 graded four of its own theory's predictions through registrations sealed before
 the data were read, returning one pass whose interesting number is the half of the
 population that violates the law, two indeterminate verdicts whose reduction
@@ -404,6 +408,91 @@ t^\star = \inf \{\, t \ : \ D\big(J(x), J(T_t x)\big) > \epsilon \,\},
 with $D$ an output discrepancy and $\epsilon$ a tolerance fixed in advance. A
 failed invariance test then measures where a degree of freedom supposed to be
 irrelevant starts to matter.
+
+\subsection{Narrowing the admissible class has to be shown to cost something}
+\label{sec:uconstraint}
+
+The standing objection to any invariance-based account is that the theorist picks
+the class. Section 2 credited \citet{nozick2001} with raising it and leaving it
+open, and an account that answered it by declaring the class and stopping there
+would deserve the same verdict, because a recorded arbitrary choice is still
+arbitrary. The point bites hardest at Definition 3, which makes comparative
+fundamentality relative to $U$. If nothing constrains $U$, that definition ranks
+nothing, and the apparatus above is bookkeeping attached to a free parameter.
+
+Four constraints are already carried by the definitions. A fifth is a norm this
+paper proposes, and it is the one that does the work the others leave undone.
+
+\textbf{The class is fixed by the claim rather than chosen beside it.} An
+admissible transformation is licensed by the philosophical commitment under test,
+so $\mathcal{T}$ is not a second choice made after the claim but a restatement of
+it. A claim that renaming does not matter fixes its class as soon as renaming is
+defined. The theorist's freedom is therefore freedom over what to claim, which is
+the ordinary condition of inquiry rather than a defect peculiar to this method.
+What changes is that the two move together. Narrowing $\mathcal{T}$ to save a
+result narrows the claim by exactly as much, and because the claim is registered
+before the test, the narrowing is a visible amendment rather than a silent one.
+
+\textbf{Declaring a transformation declares what it generates.} Definition 1
+quantifies over the closure $\langle \mathcal{T} \rangle$, not over the declared
+generators. A class gerrymandered to exclude an awkward case must therefore be
+closed under composition while still excluding it, which is a strong structural
+demand and usually an impossible one. Most convenient exclusions are not closed,
+and a reader can check closure without rerunning anything.
+
+\textbf{Breadth is bought from discrimination.} Principle 1's non-triviality
+requirement means survival across a wider class is not free. A judgment can always
+be made invariant under more by discriminating less, and in the limit a constant
+judgment survives everything and says nothing. The quantity that Definition 3
+compares is therefore envelope breadth at fixed discriminative adequacy, which is
+why that definition carries the comparable-adequacy clause. The clause is not a
+technical caveat. It is what stops the ranking from rewarding theories that have
+purchased invariance by saying less.
+
+\textbf{A class without an ordering supports no witness.} Definition 4 requires a
+declared complexity ordering, since minimality is defined against it. A universe
+presented as an unstructured set supports no boundary witness, hence no boundary
+claim, hence none of the localizing work that distinguishes this account from a
+pass and fail verdict. Requiring witnesses therefore constrains the shape of $U$
+and not only its membership, and a registry whose families are all of equal rank
+has declared no ordering and can claim no minimality.
+
+\textbf{A restriction has to bind.} The four constraints above make a class costly
+to gerrymander and none of them makes it impossible, because a programme can still
+declare a narrow class from the start and claim only what that class supports. The
+remedy is a norm on restrictions. A programme that restricts its class or its
+domain must show that the restriction does work, which means the claim must fail,
+or come measurably closer to failing, outside the restriction. Where the claim
+holds equally well outside the declared scope, the scope was not a boundary of the
+claim but a convenience of the report, and the claim should be stated without it.
+
+The norm is mechanical, which is its point. A declared scope carries two
+obligations rather than one. The claim must hold inside it, and the claim must be
+worse outside it by a margin fixed in advance. Section~\ref{sec:od} reports a case
+in which both were registered before the run and both were graded. The second
+obligation was met, the out-of-scope error reading 1.19 against an in-scope limit
+of 0.64, and had it not been met the registration said in advance that the claim
+would fail as stated. That clause is what stops a scope from being a way of
+dropping the cases that do not work, and a programme unwilling to write it is
+telling a reader something.
+
+What this does not do is make $U$ objective. Nothing here recovers a class that
+the world hands over, and outside mathematics and physics no such class is on
+offer. What it does is convert an unconstrained choice into a constrained and
+visible one. The class must follow from the claim, must be closed, must be paid
+for in discrimination, must be ordered, and must bind where it is narrowed. A
+disagreement about $U$ then becomes a disagreement about which of those five a
+rival registry fails, which is a question with an answer, where the disagreement it
+replaces was a difference of intuition about what ought not to matter.
+
+One consequence should be stated because it limits Definition 3 rather than
+supporting it. Envelope inclusion compares two descriptions only when both are
+evaluated against the same declared $U$. Two programmes with different registries
+are not ranked by that definition at all, and a claim that one theory is more
+invariantly fundamental than another is a claim made inside a shared declaration.
+Comparative fundamentality is accordingly a relation on theories and a
+declaration, written $\mathcal{E}_U$ where the subscript matters, and a bare ranking
+should be read as one whose $U$ has gone unstated.
 
 \section{The protocol}
 
@@ -1003,14 +1092,18 @@ than discovered. Invariance is therefore comparative evidence against
 representational arbitrariness and not a truth criterion, and predictive adequacy,
 independent replication, and domain specification remain necessary.
 
-\textbf{The transformation class is chosen by the theorist.} Also correct, and it is
-the central governance problem of any invariance-based method, the one
-\citet{nozick2001} raises without settling and the one the robustness literature
-treats as its main risk. The remedy is not to pretend the choice is objective. It is
-to make it explicit, versioned, contestable, and empirically revisable, so competing
-philosophical positions appear as competing transformation registries and the
-disagreement is located rather than argued. In the programmes reported here the
-registry is a file, it is sealed before the runs that test it, and
+\textbf{The transformation class is chosen by the theorist.} Correct, and it is the
+objection this account has to answer rather than concede, since Definition 3 makes
+fundamentality relative to that class. Section~\ref{sec:uconstraint} is the answer,
+and declaring the class is not it, because a recorded arbitrary choice is still
+arbitrary. The class is constrained five ways, by following from the claim rather
+than being chosen beside it, by being closed under composition, by being paid for in
+discriminative adequacy, by carrying the ordering a witness needs, and by the
+requirement that any narrowing of it be shown to bind. None of the five makes the
+class objective, and together they turn a free parameter into a constrained one
+whose failures can be named, so that a disagreement about the class becomes a
+question of which of the five a rival declaration fails. In the programmes reported
+here the registry is a file, it is sealed before the runs that test it, and
 Section~\ref{sec:od} is a case in which the declared family and not the data turned
 out to be the limit.
 

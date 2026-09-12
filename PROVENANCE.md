@@ -158,6 +158,57 @@ clean with no undefined references or citations. The anonymity check passes on
 seven patterns. 20 pages named, 19 anonymized, about 9,600 words, inside the 15
 to 30 printed pages Synthese expects.
 
+## 4.5 The constraint on the admissible class, added 2026-09-12
+
+An editorial pass in the voice of a Synthese handling editor identified one
+objection as the paper's deciding weakness. Definition 3 makes comparative
+fundamentality relative to the universe of transformations U, and the draft
+answered the standing objection that the theorist picks that class by saying the
+class should be declared, versioned, and contestable. That answer does not work,
+because a recorded arbitrary choice is still arbitrary. Declaring a choice makes
+it auditable rather than correct, and the draft presented the one as though it
+were the other.
+
+New Section 4.5 is the answer. Four constraints were already carried by the
+definitions and were not being used as constraints.
+
+1. The class follows from the claim rather than being chosen beside it, so
+   narrowing it narrows the claim by exactly as much, visibly, because the claim
+   is registered first.
+2. Definition 1 quantifies over the closure, so declaring a transformation
+   declares what it generates and most convenient exclusions are not closed.
+3. Principle 1's non-triviality means breadth is paid for in discrimination,
+   which is what the comparable-adequacy clause of Definition 3 is doing.
+4. Definition 4 needs a complexity ordering, so a universe presented as an
+   unstructured set supports no witness and can claim no minimality.
+
+The fifth is new and is the paper's own contribution on this question. A
+restriction has to bind. A programme that narrows its class or its domain must
+show the claim fails, or comes measurably closer to failing, outside the
+narrowing, since otherwise the scope was a convenience of the report rather than
+a boundary of the claim. The norm is mechanical and it was already being run
+before it was stated. The ninth registration of Section 7.5 registered both
+obligations in advance and was graded on both, the out-of-scope error reading
+1.19 against an in-scope limit of 0.64.
+
+The section ends with what the argument does not achieve, which is objectivity
+for U, and with a consequence that limits Definition 3 rather than supporting it.
+Envelope inclusion compares two descriptions only against a shared declared U, so
+two programmes with different registries are not ranked by it at all.
+
+The objection in Section 11 now points at Section 4.5 instead of restating the
+old deflection, and the abstract carries the argument. Formal architecture went
+from 10.3 to 18.1 percent of the body and the philosophical sections together now
+outweigh the case studies, 42.5 percent against 38.7, which was the second thing
+the editorial pass asked for.
+
+Still outstanding from that pass. Section 7 should be compressed further, with
+7.3 kept and 7.5 cut to about a third. The formal apparatus proves nothing and
+should either prove something or shrink. The specification numbers and the
+three-arm architecture should come out of the paper. Orzack and Sober, Weisberg,
+and Hacking should be engaged if Section 2 is to hold. Conjecture 1 is
+unfalsifiable as written.
+
 ## 5. Build
 
 ```

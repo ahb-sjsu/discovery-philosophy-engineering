@@ -209,6 +209,64 @@ three-arm architecture should come out of the paper. Orzack and Sober, Weisberg,
 and Hacking should be engaged if Section 2 is to hold. Conjecture 1 is
 unfalsifiable as written.
 
+## 4.6 The rest of the editorial pass, 2026-09-12
+
+**Section 7 compressed, 3963 words to 3089.** The campaign section lost the
+technical detail of its third gate, which was the least philosophical of the four
+and is now reported for the shape of its failure rather than its numbers. The
+discovery line lost about two thirds of its length, keeping the arc, the ninth
+registration, and the numbers Section 4.5 depends on. The two cases the editorial
+pass said to protect were kept at full length and one of them, the economic
+invariance, was lengthened, since it is the paper's cleanest instance and was its
+shortest. Every subsection now opens by naming the philosophical claim it puts
+under test, because a case that does not name one reads as an engineering report.
+Case studies are 30.7 percent of the body against 42.7 before, and everything else
+is 69.3.
+
+**The formalism now proves something.** Two propositions were added, and both
+limit the apparatus rather than advertising it. Proposition 2 shows envelope
+inclusion is a preorder on judgments and a partial order only on classes sharing
+an envelope, so Definition 3 ranks what theories have discarded and cannot
+separate two descriptions with the same envelope, and a claim of strict ranking
+owes a transformation in the difference. Proposition 3 shows a boundary witness
+exists exactly when the declared complexity ordering is well-founded on the
+violating set, and is unique only when that ordering is total there, which is why
+a declaration has to carry a grading rather than a membership list.
+
+**Conjecture 1 relabelled.** As written it could not fail, since "many phenomena
+admit low-complexity invariant structures" has no refuting observation. It is now
+a hypothesis about the method's yield, with the failing observation stated, which
+is a programme that runs the protocol across several unrelated domains with
+classes declared in advance and finds nothing surviving past the Holdout rung.
+
+**Robustness critics engaged.** Section 2 leaned on robustness without citing its
+critics. Orzack and Sober, who press against Levins that models called independent
+frequently are not, and Weisberg, who reconstructs robustness analysis as
+delivering common causal structure rather than confirmation, are now both in the
+argument, together with Hacking, whose argument from agreement between detection
+methods resting on different physical principles is the nearest relative of the
+envelope. The paragraph turns on the point that all three diagnoses concern the
+same unstated quantity, the set of routes actually tried.
+
+**Specification numbers.** The editorial pass asked for these to come out of the
+paper. They were never in it. The four occurrences of the word specification are
+ordinary English and were left.
+
+**A defect found in the process.** BibTeX honours a percent sign as a comment only
+between entries, not inside one. The three verification marks written on
+2026-09-12 were placed inside their entries and had been raising
+"I was expecting a `,' or a `}'" on every build since, which went unnoticed because
+the build check grepped for undefined references rather than for BibTeX errors.
+The marks are now above their entries where they are real comments, thagard2024
+gained the publisher it was missing, and the build check now reads the BibTeX log.
+Zero errors and zero warnings.
+
+**Still outstanding.** Nothing from the editorial pass. The open items are the
+author's, and they are the reconstructed codomain of Section 2 of this file, the
+two bare revisions in the campaign registry, and the volume and pages of the
+accepted systems-journal paper, whose verify mark is still live because it cannot
+close until the journal assigns them.
+
 ## 5. Build
 
 ```

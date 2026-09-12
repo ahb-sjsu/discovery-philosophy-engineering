@@ -172,8 +172,16 @@ bookkeeping rather than concept. Robustness analysis reports that a result held
 across several independent routes. It does not generally declare the set of routes
 in advance, does not require failures to be reduced, and has no standard form in
 which a reader can see which routes were tried and rejected. The literature knows
-this, and the charge that robustness can be manufactured by choosing agreeable
-models is the standing objection to it.
+this. \citet{orzack1993} press the point against Levins directly, arguing that
+models called independent are frequently not, and \citet{weisberg2006}
+reconstructs robustness analysis so that what it delivers is a common causal
+structure across a set of models rather than confirmation, which restricts the
+method to what it can support at the cost of narrowing what it establishes. \citet{hacking1983} makes the
+nearest relative of the present argument, that agreement between detection methods
+resting on different physical principles is evidence the detected thing is not an
+artifact of either. All three turn on the same unstated quantity, which is the set
+of routes actually available and actually tried. The envelope is that set, written
+down before the trying.
 
 \textbf{Invariance under intervention.} \citet{woodward2003} makes invariance under
 a range of interventions the mark separating a causal generalization from an
@@ -383,6 +391,33 @@ Without the qualification, comparative fundamentality would reward exactly the a
 hoc manoeuvre the robustness literature identifies as its own main risk.
 \end{remark}
 
+Two properties of this ordering are worth stating, because both limit it.
+
+\begin{proposition}[Envelope inclusion orders classes, not theories]
+Fix $U$ and write $J_1 \succeq_U J_2$ when $\mathcal{E}(J_2) \subseteq
+\mathcal{E}(J_1)$. Then $\succeq_U$ is reflexive and transitive, and
+$J_1 \succeq_U J_2$ together with $J_2 \succeq_U J_1$ gives
+$\mathcal{E}(J_1) = \mathcal{E}(J_2)$ rather than $J_1 = J_2$. So $\succeq_U$ is a
+preorder on judgments and a partial order on the classes of judgments sharing an
+envelope. If $U$ and the declared test domain are finite and $\sim_Y$ is decidable,
+then $\mathcal{E}(J)$ is computable in $|U|$ times the size of that domain, and
+$\succeq_U$ is decidable.
+\end{proposition}
+
+\begin{proof}
+Reflexivity and transitivity are those of set inclusion. Mutual inclusion gives
+equality of envelopes, which does not determine the judgment, since two judgments
+can survive the same transformations and still differ on cases no transformation in
+$U$ reaches. Decidability is by exhaustion over $U$ and the domain.
+\end{proof}
+
+The consequence limits Definition 3 rather than supporting it. Envelope inclusion
+cannot separate two descriptions with the same envelope, so it does not rank
+theories but ranks what theories have discarded. A programme claiming one theory
+more invariantly fundamental than another therefore owes a transformation lying in
+the difference of the two envelopes, and a claim of strictness with no such
+transformation exhibited is not one this definition supports.
+
 \subsection{A failure says more when it is reduced to its smallest witness}
 
 A radar return is useful because it localizes. The analogue for theories is a
@@ -408,6 +443,30 @@ t^\star = \inf \{\, t \ : \ D\big(J(x), J(T_t x)\big) > \epsilon \,\},
 with $D$ an output discrepancy and $\epsilon$ a tolerance fixed in advance. A
 failed invariance test then measures where a degree of freedom supposed to be
 irrelevant starts to matter.
+
+Definition 4 is not satisfiable under every declaration, and the condition is worth
+recording because it is what the complexity ordering is for.
+
+\begin{proposition}[Witnesses exist when the ordering is well-founded]
+Let $\prec$ be the declared complexity ordering on $U$, and let $V \subseteq U$ be
+the non-empty set of transformations under which $J$ is not invariant. A boundary
+witness exists if and only if $\prec$ is well-founded on $V$. A witness is unique
+when $\prec$ is total on $V$, and need not be otherwise.
+\end{proposition}
+
+\begin{proof}
+If $\prec$ is well-founded on $V$ then $V$ has a $\prec$-minimal element, which
+satisfies Definition 4. If it is not, there is an infinite strictly descending chain
+in $V$, so no element of $V$ is minimal and no witness exists. Two
+$\prec$-incomparable minimal elements of $V$ are both witnesses, which gives
+non-uniqueness, and totality removes incomparability.
+\end{proof}
+
+This is why a declaration carries a grading and not only a membership list. A
+universe presented as an unstructured set has no minimal elements to find, so the
+localizing work that separates this account from a pass and fail verdict is
+unavailable to it, and a programme reporting witnesses without having declared an
+ordering has reported counterexamples under another name.
 
 \subsection{Narrowing the admissible class has to be shown to cost something}
 \label{sec:uconstraint}
@@ -621,22 +680,23 @@ to find which of them survive contact with the world.
 
 \section{The discipline at work}
 
-Five instances follow. The first is generic. The next three are reported briefly,
-each making a single point. The fifth is reported in full, because it is the only
-case in which the protocol of Section 5 ran to its own declared end. The sixth is
-the case in which the discipline's own check found a defect in the records of the
-programme that wrote it.
+Six instances follow. Each is introduced by the philosophical claim it puts under
+test, because a case that does not name one is an engineering report. The first is
+generic and the next three are brief. The fifth ran the protocol of Section 5 to
+its declared end and is the only case that did. The sixth is the one in which the
+discipline's own check found a defect in the records of the programme that wrote
+it.
 
 Every number in Sections 7.2, 7.5, and 7.6 is read from a sealed record in a public
 repository, cited where it appears. None is restated from a draft.
 
 \subsection{Epistemic invariance as an experimental object}
 
-The Epistemic Invariance Principle says a judgment should remain equivalent under
-meaning-preserving transformations \citep{bond2026pe}. In its engineering role it
-is a specification, so a system changing a medical recommendation because
-laboratory results were reordered violates a declared norm. The discovery role is
-different.
+The claim under test is that two descriptions differing only in a
+meaning-preserving way are the same case, which is an equivalence claim about
+representations \citep{bond2026pe}. In its engineering role it is a specification,
+so a system changing a medical recommendation because laboratory results were
+reordered violates a declared norm. The discovery role is different.
 
 Suppose a class $\mathcal{T}$ is proposed as semantically irrelevant. An engineer
 can build the transformation suite, measure judgment discrepancy, and search for
@@ -652,22 +712,20 @@ forcing it to meet a concrete counterexample.
 
 \subsection{A campaign that graded four of its own predictions}
 
-Geometric Evaluation Theory is an evaluator-relative theory in which states and
-actions map into a consequence space, an evaluator supplies a metric and an ideal
-point, a finite budget limits the distinctions the evaluator can make, and
-preference and choice follow from those distinctions \citep{bond2026get}. Its draft
-separates what the world supplies, the states, the actions, and the consequence
-map, from what the evaluator owns, the metric, the budget, and the admissible set.
-Every claim is labelled proved, defined, posited, or open, and predictions are
-graded through gates sealed before the data are read. Four of its empirical
-questions have run across five sealed registrations.
+The claim under test is that evaluation is evaluator-relative in a specific way,
+the world supplying states, actions, and a consequence map, and the evaluator
+supplying a metric, an ideal point, and a finite budget that limits the
+distinctions it can make, with preference and choice derived from those
+distinctions \citep{bond2026get}. Every claim in that programme is labelled proved,
+defined, posited, or open, and predictions are graded through gates sealed before
+the data are read. Four questions have run across five sealed registrations.
 
-The first tested the hull law, a consequence of the representation theorem that no
-action is strictly worse than every action whose consequences surround it. The
-consequence map must be known, so the world was the 1972 American National Election
-Study, in which respondents placed candidates and parties on seven-point issue
-scales and rated them on feeling thermometers. The registration was sealed before
-any rating was read. On the registered pair of scales 489 respondents had a menu in
+The first tested a consequence of the representation theorem, that no action is
+strictly worse than every action whose consequences surround it. The consequence
+map must be known, so the world was the 1972 American National Election Study,
+where respondents placed candidates and parties on seven-point issue scales and
+rated them on feeling thermometers, and the registration was sealed before any
+rating was read. On the registered pair of scales 489 respondents had a menu in
 which the law could bind, 50 percent violated it at least once, against 66 percent
 when each respondent's ratings were shuffled among that respondent's own objects,
 and no shuffle in 200 reached the observed rate. Five other pairs of scales gave
@@ -679,72 +737,46 @@ population is a boundary witness against the deterministic reading, and what
 absorbs it is not yet registered, since no error model for integer placements and
 integer ratings was part of the seal.
 
-The second tested the claim that the indifference threshold of the induced order is
-the evaluator's resolution budget. The evaluator was a language model asked how far
-a value sits from a target and answering with a number, and three budgets were set
-independently, the decimals shown, the tokens allowed for the report, and the
-precision of the weights. A cell's threshold is the separation at which the scorer orders
-90 percent of pairs correctly. On fresh pairs every graded threshold sat at 0.87 to
-0.88 of the step the rendering imposed and of the resolution the report length
-afforded, the largest ratio 1.15 against a tolerance of 1.5 fixed before the seal,
-and the constant near 0.87 is where the 90 percent level of a rounding scorer
-falls, as a self-test on a known grid had shown. The weight precision did not move
-the threshold at all, eight-bit and four-bit weights leaving it where full
-precision put it to the third digit. Two of three declared budgets are resolution
-budgets and the third is not, which is the finding, and the registration could have
-carried only the two that worked. Two instruments tried before the one that ran are
-kept in the record rather than dropped. A pairwise chooser read from answer-letter
-logits was vacuous when the options straddled the target, because the model picks
-the larger number, and had a floor of 7.5 when they did not, from position bias.
-The reduction of that failure generalizes past the case. A pairwise chooser
-measures its own position bias before it measures a threshold.
+The second tested whether the indifference threshold of the induced order is the
+evaluator's resolution budget. The evaluator was a language model asked how far a
+value sits from a target, and three budgets were set independently, the decimals
+shown, the tokens allowed for the report, and the precision of the weights. On
+fresh pairs every graded threshold sat at 0.87 to 0.88 of the step the rendering
+imposed and of the resolution the report length afforded, the largest ratio 1.15
+against a tolerance of 1.5 fixed before the seal. The weight precision did not move
+the threshold at all. Two of three declared budgets are resolution budgets and the
+third is not, which is the finding, and the registration could have carried only
+the two that worked. Two instruments tried before the one that ran are kept in the
+record rather than dropped, and the reduction of their failure generalizes past the
+case. A pairwise chooser measures its own position bias before it measures a
+threshold.
 
-The third tested the incompatibility theorem, which says several evaluators reading
-one rank-limited representation each pay a regret fixed by their geometries, that a
-shared representation best for all exists only when their leading subspaces
-coincide, and that least total regret is attained by the leading eigenspace of the
-summed geometries. The world was the grouped-query attention of a language model,
-with three query heads as evaluators of one key cache and shared codes of rank 2,
-4, and 8 in 128 dimensions. The first sealed run coded all keys at once and found
-the measured attention loss 20 to 330 times the second-order prediction, so the
-regret formula was not tested and the verdict was indeterminate. The ordering claim
-survived, the leading eigenspace of the summed geometries beating every random code
-and the key-covariance code in 32 of 32 cases, while a head's own leading eigenspace
-was best for that head in fewer than half. The failure was then reduced, as Section
-5.6 requires. The registered prediction and the registered measurement were not the
-same object, a one-key operator against an all-keys loss, and the codes sat far
-outside the range where the quadratic approximation holds. A second sealed run
-measured the object the formula
-predicts, one key perturbed by a small isotropic error in the discarded subspace,
-along a ladder of perturbation sizes. The ratio of measured to predicted loss was
-flat in the perturbation size up to a tenth of a whitened unit with median over
-cells 1.02 to 1.05, so the recovered operators predict the loss without bias, and 64
-draws per cell left a 20 percent scatter that missed the registered per-triple bar,
-so that verdict was indeterminate as well. A seed check with fresh draws showed the
-scatter to be draw noise. Two errors in that registration's own error estimate are
-recorded in it. What the two runs establish together is the boundary of the
-theorem's range of validity. Inside it the regret formula and the bound follow from
-the
-recovered operators, so the only empirical content is whether the loss is quadratic
-with the recovered operator, which holds. Outside it the ordering survives and the
-private optimum does not. The perturbation ladder is
-equation~\eqref{eq:boundary} executed.
+The third tested a theorem about several evaluators reading one rank-limited
+representation, and is reported here because its failure was informative rather
+than because it passed. The first sealed run found the measured loss 20 to 330
+times the second-order prediction, so the formula was not tested and the verdict
+was indeterminate. The failure was then reduced, as Section 5.6 requires, to two
+causes. The registered prediction and the registered measurement were not the same
+object, and the codes sat far outside the range where the quadratic approximation
+holds. A second sealed run measured the object the formula predicts and found the
+ratio of measured to predicted loss flat in the perturbation size with median over
+cells 1.02 to 1.05, while 64 draws per cell left a scatter that missed the
+registered bar, so that verdict was indeterminate as well. What the two runs
+establish together is the theorem's range of validity. Inside it the empirical
+content reduces to whether the loss is quadratic with the recovered operator, which
+holds. Outside it an ordering claim survives and a claim about private optima does
+not. The perturbation ladder is equation~\eqref{eq:boundary} executed.
 
-The fourth tested identification, the theorem that an evaluator's choices recover
-the metric up to scale and the ideal up to the metric's kernel, with the design
-bound that the consequences must span the space affinely. The estimator is the
-representation theorem's semidefinite program. Two pilots before the seal caught
-two wrong drafts of that estimator and showed the drafted absolute tolerances were
-empty, since identification from ordinal data is slow, so the bars were restated on
-medians relative to each evaluator's chance level. The sealed run passed in all
-twelve cells on a fresh seed. From a weak order on 64 consequences above the
-dimension, the metric and the ideal's range component were recovered to a few
-percent of chance with error falling at every step of the battery ladder. At or
-below the design bound, off the span of a battery confined to a subspace, and in
-the kernel of a singular metric, nothing was recovered. A semiorder withholding the
-fifth of pairs closest in distance identified more slowly. The negative claims, what
-choices cannot reveal, came out as sharp as the positive one, and each would have
-been a witness against the theorem or its remark had it failed.
+The fourth tested identification, that an evaluator's choices recover the metric up
+to scale and the ideal up to the metric's kernel, with the design bound that the
+consequences must span the space affinely. Two pilots before the seal caught two
+wrong drafts of the estimator and showed the drafted tolerances were empty, so the
+bars were restated on medians relative to each evaluator's chance level. The sealed
+run passed in all twelve cells on a fresh seed, and at or below the design bound,
+off the span of a battery confined to a subspace, and in the kernel of a singular
+metric, nothing was recovered. The negative claims, what choices cannot reveal,
+came out as sharp as the positive one, and each would have been a witness against
+the theorem had it failed.
 
 This theory suits the discipline because it makes representation choice explicit.
 Under an invertible change of basis $z' = Az$ a quadratic metric transforms as
@@ -757,184 +789,134 @@ z'^{T} G' z' = z^{T} G z ,
 \end{equation}
 and the evaluative distance is invariant while the coordinates are not. Which
 properties of evaluation survive changes of representation, encoder,
-dimensionality, and task is then the question the campaign asks gate by gate. The
-campaign file, the ledger, the sealed registrations, the run logs, and every result
-file are public.
+dimensionality, and task is then the question the campaign asks gate by gate.
 
 \subsection{A published invariance that failed on independent data}
 
-A geometric model of economic behaviour accepted by a systems journal contains both
-a successful reduction and an independent failure \citep{bond2026tcss}. It
-represents alternatives in a nine-dimensional decision space and fits a diagonal
-Mahalanobis metric. Structural search selects social impact, virtue and identity,
-and epistemic status as active dimensions on the reported benchmark, and the
-monetary dimension is inactive in the selected low-stakes calibration.
+The claim under test is that a decision geometry fitted in one setting describes
+decisions in another, and the invariance it entails is that a quantity the fitted
+model treats as inactive cannot matter. This is the cleanest case in the paper,
+because the invariance was forced by the model rather than chosen for testing.
 
-The methodological step is not the fit but the consequence the inactive monetary
-coordinate forces. Under the share-normalized encoding, positive rescaling of all
-monetary stakes should leave predicted offers and rejections unchanged, which is a
-sharp stake-scaling invariance. Tested on individual-level high-stakes ultimatum
-data that played no part in fitting or selection, offers and rejection rates changed
-substantially with stake, and stake retained predictive power after conditioning on
-offer share. The invariance fails.
+A geometric model of economic behaviour accepted by a systems journal represents
+alternatives in a nine-dimensional decision space and fits a diagonal Mahalanobis
+metric \citep{bond2026tcss}. Structural search selects social impact, virtue and
+identity, and epistemic status as active dimensions on the reported benchmark, and
+the monetary dimension is inactive in the selected low-stakes calibration. Under
+the share-normalized encoding, positive rescaling of all monetary stakes should
+therefore leave predicted offers and rejections unchanged, which is a sharp
+stake-scaling invariance that nobody chose to claim.
 
-Under a confirmatory reading this is a negative result. Under the present one it is
-a boundary measurement, because the contradiction identifies a specific missing
-quantity, share normalization having removed consequential monetary magnitude. An
-income-relative monetary coordinate is then a new testable hypothesis, that
-decisions depend on stake relative to local income rather than on nominal stake. The
-route runs from geometry to invariance to independent probe to boundary witness to a
-new representation. A radar return is not a failure. It is information about where
-the theory stops describing the terrain.
+Tested on individual-level high-stakes ultimatum data that played no part in
+fitting or selection, offers and rejection rates changed substantially with stake,
+and stake retained predictive power after conditioning on offer share. The
+invariance fails. Under a confirmatory reading this is a negative result. Under the
+present one it is a boundary measurement, because the contradiction identifies a
+specific missing quantity, share normalization having removed consequential
+monetary magnitude. An income-relative monetary coordinate is then a new testable
+hypothesis, that decisions depend on stake relative to local income rather than on
+nominal stake. The route runs from geometry to invariance to independent probe to
+boundary witness to a new representation. A radar return is not a failure. It is
+information about where the theory stops describing the terrain.
 
 \subsection{Symbolic search that reports when it loses}
 
-Theory Radar discovers compact classifiers from tabular data and evaluates whether
-they can fairly replace ensemble models on the dataset at hand
-\citep{bond2026radar}, combining formula enumeration, search acceleration,
-representation augmenters, and held-out replay. Its stated value lies in the
-comparison rather than in symbolic formulas winning, and some datasets admit compact
-formulas matching or beating ensembles while others do not.
-
-The methodological relevance is that it operationalizes a preference for
-low-complexity explanation without treating simplicity as sacred, since a formula is
-accepted only if it survives fair held-out evaluation. Where the boundary is
-intrinsically high-dimensional the ensemble wins, and that negative result is
-informative because it identifies a domain in which compression to the searched
-grammar loses predictive structure. The natural extension scores candidates for
-stability under admissible representation changes as well as for accuracy and
-syntactic size, which turns symbolic search into a way of finding simple formulas
-whose content survives transformations that should not matter.
+The claim under test is that simplicity is evidence, which the case qualifies
+rather than supports. Theory Radar discovers compact classifiers from tabular data
+and evaluates whether they can fairly replace ensemble models on the dataset at
+hand \citep{bond2026radar}. Its stated value lies in the comparison rather than in
+symbolic formulas winning, and a formula is accepted only if it survives fair
+held-out evaluation. Where the boundary is intrinsically high-dimensional the
+ensemble wins, and that negative result is informative because it identifies a
+domain in which compression to the searched grammar loses predictive structure. The
+natural extension scores candidates for stability under admissible representation
+changes as well as for accuracy and syntactic size, which turns symbolic search
+into a way of finding simple formulas whose content survives transformations that
+should not matter.
 
 \subsection{Nine registrations and one law}
 \label{sec:od}
 
-The cases above each exercise part of the loop. The following line exercises all of
-it, nine times, under sealed registrations, and is the only case on record in which
-the protocol ran to its declared end \citep{bond2026odline}. It also supplies what
-the others do not, a measurement of what the protocol costs. Three of the nine
-registrations failed.
+The claim under test is that a property attributed to a body of data is partly a
+property of the reader, so that a law about it must be stated in the reader's
+variables or not at all. The cases above each exercise part of the loop. This line
+exercises all of it, nine times under sealed registrations, and is the only case in
+which the protocol ran to its declared end \citep{bond2026odline}. It also measures
+what the protocol costs, since three of the nine registrations failed.
 
-A hub is a row of a corpus appearing in many other rows' nearest-neighbour lists.
-The instrument counts, for every row, how often it is retrieved among the ten
-nearest neighbours of the others. The Poisson hub excess is the busiest row's count
-divided by the largest count a random assignment of the same retrieval slots would
-reach, so an excess of one is chance. The observer is a linear read, a rotation
-followed by a diagonal rescaling whose spectrum falls as a power of the index, the
-exponent running from zero, a pure rotation, to two, a reader that sees one
-direction. Earlier gates had shown that a corpus's hubs are made by the reader as
-much as by the corpus. The question was whether the amount of hubness is lawful in
-the reader's own variables.
+A hub is a row of a corpus appearing in many other rows' nearest-neighbour lists,
+and the amount of hubness is summarized against what a random assignment of the
+same retrieval slots would reach, so that one is chance. The observer is a linear
+read whose spectrum falls as a power of the index, running from a pure rotation to
+a reader that sees one direction. Earlier gates had shown that a corpus's hubs are
+made by the reader as much as by the corpus, and the question was whether the
+amount is lawful in the reader's own variables.
 
-The family of laws was declared once and kept. A law is linear in at most three
-features drawn from a fixed pool of transforms of variables measured on the
-observed data. The search fits every model of the family on training worlds and
-ranks by error on held-out worlds under unseen observer spectra, the pilot freezes
-the best, the registration is sealed by renaming the file with the frozen law inside
-it, the run uses a fresh seed, and a sealed grader grades. Every bar is a multiple
-of the frozen law's own pooled pilot error, fixed before the seal, and a competitor
+The family of laws was declared once and kept, linear in at most three features
+from a fixed pool measured on the observed data. The search ranks candidates by
+error on held-out worlds under unseen observer spectra, the pilot freezes the best,
+the registration is sealed by renaming the file with the frozen law inside it, the
+run uses a fresh seed, and a sealed grader grades. Every bar is a multiple of the
+frozen law's own pooled pilot error, fixed before the seal, and a competitor
 beating the law pooled on the transfer groups is a failure by a clause written in
 advance.
 
-The first four registrations changed the discovery set and kept everything else, and
-the law changed with the set each time, which is the finding. A law found on
-Gaussian clouds read the distance concentration and the spectral dimension and
-failed off Gaussians. A law found on seven shape families held every synthetic
-family and the SIFT descriptors and missed the Wikipedia embeddings, whose intrinsic
-dimension of 8 to 20 sat under a spectral dimension of up to 320. The intrinsic
-dimension was in the pool and the search had dropped it, because on full-dimensional
-families it duplicates the spectral dimension. Putting manifold worlds into the set
-made the search take it, and the Wikipedia error fell from 5.3 to 2.5 to 1.0 across
-the three gates. The discovery set decides the law.
+Four registrations changed the discovery set and kept everything else, and the law
+changed with the set each time. A law found on Gaussian clouds failed off
+Gaussians. A law found on seven shape families missed the real embeddings, whose
+intrinsic dimension sat far under their spectral dimension, because on
+full-dimensional families those two variables duplicate each other and the search
+had dropped one. Adding manifold worlds made the search take it back, and the error
+on the missed corpus fell from 5.3 to 2.5 to 1.0 across three gates. Two further
+registrations attacked the family rather than the set, and both found the same
+limit, the largest error of every law sitting where a law linear in any transform
+of the summary statistic cannot turn over. The record said the family, and not the
+set, was the limit.
 
-The next two attacked the family rather than the set and both found the same limit.
-A pool extended with four scale-free tail measures of the neighbour distances was
-offered to the search, and the search declined every one of them, an outcome the
-registration had named in advance as its first falsification condition. Placing the
-heavy tails in the discovery set at the dimensions the transfer asked about then
-bought the heavy tails and lost the high-dimensional clouds, the previously frozen
-law was the better predictor pooled, and the gate failed by its own clause. Three
-registrations had by then put the same worlds on both sides of one limit, the
-largest error of every law sitting where the hubness skewness exceeds 12, where a
-law linear in any transform of the skewness cannot turn over. The record said the
-family, and not the set, was the limit.
+The seventh changed the target and nothing else. On the same worlds and readers the
+search froze a law with pooled pilot error 0.328, a factor of 1.39, against 1.135
+for the nominal formula and 1.598 for chance, and on the run it held the heavy
+tails, the highest dimensions, fresh real slices, and the largest samples at once,
+beating both competitors pooled and inside every group for the first time in the
+line. Same family, same pool, same search, same worlds. The target had been the
+limit all along. The eighth asked whether the new target takes coverage without
+paying for it, and it does not, buying the highest-dimensional worlds and paying on
+the heavy tails at worse than chance, so the earlier law won pooled and the gate
+failed by its own clause.
 
-The seventh changed the target and nothing else, predicting the log of the Poisson
-hub excess in place of the skewness. On the same 73 worlds and readers the search
-froze a law in the concentration of the tenth-neighbour distance, the spectral
-dimension, and the intrinsic dimension, with pooled pilot error 0.328, a factor of
-1.39 in the excess, against 1.135 for the nominal formula and 1.598 for chance. On
-the run it held the heavy tails, the Gaussian at 512 dimensions, four fresh real
-slices, and the largest samples at once, and it beat the nominal formula and chance
-pooled and inside every group, the first law of the line to do so. Same family,
-same pool, same search, same worlds. The target had been the limit all along.
+An exploration then asked whether any shape of the declared family holds both sides
+at once. Twelve configurations were scored and none passed, and the exploration
+named the mechanism instead. The law's concentration term is a reciprocal, it
+diverges where that concentration is small, and it predicts an excess near zero
+against a truth of 1.4. Removing the reciprocal loses the real corpora, which the
+reciprocal is what fits. That is a boundary of the family's shape and not a missing
+world, and it is Definition 4 carried out on a declared complexity ordering.
 
-The eighth asked whether the new target takes coverage without paying for it, and it
-does not. Adding the highest-dimensional clouds to the training set bought every
-full-dimensional world beyond 256 dimensions and the best real-slice errors of the
-line, and paid on every heavy-tailed world and on an unseen ball, at worse than
-chance. The earlier law won pooled and the gate failed. The trade the skewness
-family had shown reappeared in the excess family at about a third of the size and
-with the same sign.
-
-Before a ninth, an exploration on the rows already collected asked whether any shape
-of the declared family holds both sides at once. Twelve configurations were scored
-against the frozen law and none passed. The exploration named the mechanism instead.
-Under an isotropic reader a uniform ball at 384 dimensions has a tenth-neighbour
-concentration of 0.003, six times below a Gaussian's at the same dimension, the
-law's concentration term is a reciprocal, it diverges there, and it predicts an
-excess near zero against a truth of 1.4. Removing the reciprocal loses the real
-corpora, which the reciprocal is what fits. That is a boundary of the family's shape
-and not a missing world, and it is Definition 4 carried out on a declared complexity
-ordering.
-
-The ninth registered that boundary as the claim and searched nothing. A row is in
-scope when its tenth-neighbour concentration is at least 0.015, a threshold declared
-from the collected rows before the pilot and not moved after it. Inside the scope
-the frozen law is claimed within the earlier bars on fresh worlds. Outside it the
-law is not claimed, and its pooled error there must exceed the in-scope limit, or the
-scope was a convenience and the claim fails as stated. That second clause is what
-stops a scope from being a way of dropping the worlds that fail. The registration
-also named in advance the one in-scope cell it expected to lose, a heavy-tailed
-family at a sample size of 12000, with the reason, which is that the law carries no
-term in sample size.
-
-The run held every bar but that one. All eighteen unseen worlds sat inside the limit
-on their in-scope rows, pooled 0.31 against a limit of 0.48, the real slices read
-0.12 to 0.41, and the law beat both competitors in every group at 0.34 against 1.63
-and 1.64. The 180 out-of-scope rows erred at 1.19 against 0.64, which is the second
-clause holding. The named cell read 0.67 against 0.64. The verdict was
+The ninth registered that boundary as the claim and searched nothing, declaring a
+scope from the collected rows before the pilot. It is the worked case for
+Section~\ref{sec:uconstraint}, because it carried both obligations a declared scope
+incurs. The law was claimed inside the scope within the earlier bars, and its
+pooled error outside the scope was required to exceed the in-scope limit, failing
+the claim as stated otherwise. The registration also named in advance the one
+in-scope cell it expected to lose, with the reason, which is that the law carries
+no term in sample size. The run held every bar but that one. All eighteen unseen
+worlds sat inside the limit on their in-scope rows, pooled 0.31 against a limit of
+0.48, the law beat both competitors in every group at 0.34 against 1.63 and 1.64,
+and the out-of-scope rows erred at 1.19 against 0.64, which is the second
+obligation holding. The named cell read 0.67 against 0.64. The verdict was
 indeterminate, by the named cell and no other.
 
-What stands is one law with one declared scope and two recorded boundaries. For a
-corpus read through a linear observer, on rows whose tenth-neighbour distances vary
-by at least 1.5 percent, the log of the busiest row's retrieval count over the
-Poisson ceiling is a linear function of the reciprocal of that variation, the log of
-the spectral dimension, and the square root of the intrinsic dimension of the
-observed data, to a factor of about 1.4 in the excess, on every family of world the
-line built, on corpus slices it never saw, and at four times its discovery sample.
-Below 1.5 percent variation the concentration term diverges and the law is
-withdrawn. For one heavy-tailed family the law under-predicts by about a factor of
-three under the isotropic reader, and a sweep after the line closed showed this to be
-a step in sample size between 4000 and 8000 followed by a plateau, which a law with
-no term in sample size cannot follow. Neither boundary is repaired by a change of the
-discovery set.
-
-Three properties are visible in the record rather than asserted. The bars never
-moved, and three registrations failed on clauses their own authors had written. Two
-pilots froze a law that trailed a competitor on the pilot's own rows, and both were
-sealed and run as registered with that fact recorded, because the transfer groups
-are the test and the pilot is not. And when a registration that would pass was
-wanted, the only route the record allowed was a change of claim, a boundary declared
-before the run with its risk named, and the run returned the outcome the risk named.
-The alternative route, dropping the worlds that fail without calling that a scope,
-was available and was not taken.
-
-The sequence of causes is the finding, and none of its five statements was available
-at the first registration. The discovery set decides the law. The family cannot hold
-both sides of the divide. The target was the limit. Coverage moves the error under
-the new target too. The boundary is a divergent term and not a missing world. Each
-was forced by a failure that had been reduced rather than absorbed.
+What stands is one law with one declared scope and two recorded boundaries, holding
+on every family of world the line built, on corpus slices it never saw, and at four
+times its discovery sample. Three properties are visible in the record rather than
+asserted. The bars never moved, and three registrations failed on clauses their own
+authors had written. Two pilots froze a law that trailed a competitor on the
+pilot's own rows, and both were sealed and run as registered with that fact
+recorded, because the transfer groups are the test and the pilot is not. And when a
+registration that would pass was wanted, the only route the record allowed was a
+change of claim with its risk named in advance, which is the route
+Section~\ref{sec:uconstraint} requires and the reason that section's norm is not an
+aspiration.
 
 \subsection{The check found a defect its own authors had not}
 
@@ -991,16 +973,22 @@ its own history.
 
 The cases motivate a conjecture rather than a conclusion.
 
-\begin{conjecture}[Fundamental Structure Conjecture]
-Many apparently high-dimensional and domain-specific phenomena admit
-low-complexity invariant structures acting on richer domain-specific
-representations, and those structures can be progressively isolated by searching
-for what survives admissible changes of representation, scale, population, and
-task.
+\begin{conjecture}[Fundamental structure, as a hypothesis about yield]
+In domains where the protocol of Section 5 can be run, searching for what survives
+admissible changes of representation, scale, population, and task will more often
+than not isolate a structure of lower complexity than the representation it acts
+on, and one reaching at least the Transfer rung of Table~\ref{tab:ladder}.
 \end{conjecture}
 
-The conjecture is broad and therefore easy to overstate, and three qualifications
-are essential. Low dimensionality is not guaranteed, and some phenomena may be
+It is stated as a hypothesis about what the method yields rather than as a claim
+about the world, because the claim about the world, that many phenomena admit such
+structures, cannot fail and so is not worth asserting. As stated it can fail. What
+would fail it is a programme that runs the protocol across several unrelated
+domains, declares its classes in advance, and finds in each that nothing survives
+past the Holdout rung. That outcome is available, it would be reportable under the
+same discipline as any other negative, and nothing reported here rules it out.
+
+Three qualifications stand whichever way the hypothesis is read. Low dimensionality is not guaranteed, and some phenomena may be
 irreducibly complex at the scale of interest, the cases in which ensembles beat
 compact formulas being exactly the evidence a serious programme preserves, along
 with the shape boundary of Section~\ref{sec:od} where the declared family had no

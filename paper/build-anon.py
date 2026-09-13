@@ -36,7 +36,7 @@ SELF_KEYS = {
     "bond2026odline": "observational discovery campaign record",
 }
 
-WITHHELD = "Details withheld for double-anonymous review."
+WITHHELD = "Details withheld for double-anonymous review"
 
 
 def anonymize_bib(src: str) -> str:

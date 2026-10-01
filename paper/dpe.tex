@@ -450,23 +450,32 @@ recording because it is what the complexity ordering is for.
 \begin{proposition}[Witnesses exist when the ordering is well-founded]
 Let $\prec$ be the declared complexity ordering on $U$, and let $V \subseteq U$ be
 the non-empty set of transformations under which $J$ is not invariant. A boundary
-witness exists if and only if $\prec$ is well-founded on $V$. A witness is unique
-when $\prec$ is total on $V$, and need not be otherwise.
+witness exists if and only if $V$ has a $\prec$-minimal element. If $\prec$ is
+well-founded on $U$, a witness therefore exists whatever the violating set turns
+out to be. If $\prec$ is not well-founded on $U$, some non-empty subset of $U$ has
+no minimal element, and a violating set equal to it would admit no witness. A
+witness is unique when $\prec$ is total on $V$, and need not be otherwise.
 \end{proposition}
 
 \begin{proof}
-If $\prec$ is well-founded on $V$ then $V$ has a $\prec$-minimal element, which
-satisfies Definition 4. If it is not, there is an infinite strictly descending chain
-in $V$, so no element of $V$ is minimal and no witness exists. Two
-$\prec$-incomparable minimal elements of $V$ are both witnesses, which gives
-non-uniqueness, and totality removes incomparability.
+By Definition 4 a witness is exactly a $\prec$-minimal element of $V$: it produces
+a violation, and no strictly simpler transformation does. An ordering is
+well-founded on $U$ exactly when every non-empty subset of $U$ has a minimal
+element, which gives the second statement. If it is not well-founded, there is an
+infinite strictly descending chain in $U$, and the set of its members has no
+minimal element, which gives the third. Well-foundedness is sufficient but not
+necessary for a particular $V$: a transformation incomparable to every member of
+an infinite descending chain is minimal in their union. Two $\prec$-incomparable
+minimal elements of $V$ are both witnesses, which gives non-uniqueness, and
+totality removes incomparability.
 \end{proof}
 
-This is why a declaration carries a grading and not only a membership list. A
-universe presented as an unstructured set has no minimal elements to find, so the
-localizing work that separates this account from a pass and fail verdict is
-unavailable to it, and a programme reporting witnesses without having declared an
-ordering has reported counterexamples under another name.
+This is why a declaration carries a grading and not only a membership list. In a
+universe presented as an unstructured set, with no ordering, every violating
+transformation is trivially minimal, so a witness always exists and localizes
+nothing. The localizing work that separates this account from a pass and fail
+verdict comes from the ordering, and a programme reporting witnesses without
+having declared one has reported counterexamples under another name.
 
 \subsection{Narrowing the admissible class has to be shown to cost something}
 \label{sec:uconstraint}

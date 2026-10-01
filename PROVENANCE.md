@@ -231,8 +231,11 @@ inclusion is a preorder on judgments and a partial order only on classes sharing
 an envelope, so Definition 3 ranks what theories have discarded and cannot
 separate two descriptions with the same envelope, and a claim of strict ranking
 owes a transformation in the difference. Proposition 3 shows a boundary witness
-exists exactly when the declared complexity ordering is well-founded on the
-violating set, and is unique only when that ordering is total there, which is why
+exists exactly when the violating set has a minimal element under the declared
+complexity ordering, which a well-founded ordering guarantees for every
+violating set (corrected 2026-10-01: the draft's "if and only if the ordering
+is well-founded on the violating set" was false in the only-if direction), and
+is unique only when that ordering is total there, which is why
 a declaration has to carry a grading rather than a membership list.
 
 **Conjecture 1 relabelled.** As written it could not fail, since "many phenomena
